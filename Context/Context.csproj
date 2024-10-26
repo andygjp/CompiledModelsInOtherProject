@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <!--  9.0.0-rc.2.24474.1  -->
+    <!--  9.0.0-preview.4.24205.3  -->
+    
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0-preview.4.24205.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tasks" Version="9.0.0-preview.4.24205.3">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <EFOptimizeContext>true</EFOptimizeContext>
+        <EFStartupProject>..\App\App.csproj</EFStartupProject>
+    </PropertyGroup>
+    
+</Project>
