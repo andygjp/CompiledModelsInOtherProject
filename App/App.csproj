@@ -15,8 +15,8 @@
     <!--  9.0.0-preview.4.24205.3  -->
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0-preview.4.24205.3" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tasks" Version="9.0.0-preview.4.24205.3">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0-rc.2.24474.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tasks" Version="9.0.0-rc.2.24474.1">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
