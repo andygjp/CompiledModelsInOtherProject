@@ -1,14 +1,10 @@
 ﻿namespace Context;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 public class BlogsContext : DbContext
 {
-    public BlogsContext()
-    {
-        // It seems I need a public parameterless constructor to get auto compiled models to work
-    }
-
     public BlogsContext(DbContextOptions<BlogsContext> options) : base(options)
     {
     }
@@ -18,14 +14,16 @@ public class BlogsContext : DbContext
     }
 
     public DbSet<Blog> Blogs => Set<Blog>();
+}
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+public class BlogsContextFactory : IDesignTimeDbContextFactory<BlogsContext>
+{
+    public BlogsContext CreateDbContext(string[] args)
     {
-        if (optionsBuilder.IsConfigured is false)
-        {
-            // It seems I need provider to get auto compiled models to work
-            optionsBuilder.UseSqlite("Data Source=blogs.db");
-        }
+        var optionsBuilder = new DbContextOptionsBuilder<BlogsContext>();
+        optionsBuilder.UseSqlite("Data Source=blog.db");
+
+        return new BlogsContext(optionsBuilder.Options);
     }
 }
 
